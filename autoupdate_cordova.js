@@ -10,6 +10,9 @@ export const Autoupdate = {};
 // Stores acceptable client versions.
 const clientVersions = new ClientVersions();
 
+// XXX Necessary for Verso's custom update monitoring layer
+Autoupdate._clientVersions = clientVersions;
+
 Meteor.connection.registerStore(
   "meteor_autoupdate_clientVersions",
   clientVersions.createStore()
